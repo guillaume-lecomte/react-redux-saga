@@ -1,19 +1,18 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { Component } from "react";
 import "./App.css";
-import PostsList from "./containers/postsListContainer";
+import PostsList from "./containers/PostsListContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <div>
-        <PostsList />
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>The BlogPost</h1>
+          <PostsList />
+        </header>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

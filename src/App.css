@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +13,147 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Table */
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.styled-table td:last-child {
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: #282c34;
+  background-color: whitesmoke;
+}
+
+.deleteButton {
+  font-size: 0.9em;
+  border: none;
+  background-color: whitesmoke;
+}
+
+/* Form */
+.form-inline {
+  display: flex;
+  flex-flow: column wrap;
+  width: 50%;
+}
+
+.form-inline input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+.form-inline label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.form-inline button {
+  margin-top: 15px;
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #3498db;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  align-self: center;
+}
+
+.form-inline button:hover {
+  background-color: transparent;
+  border-color: #fff;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Divider border */
+hr.solid {
+  border-top: 3px solid #2284c5af;
+  width: 50%;
+}
+
+/* Loader */
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #2284c5af;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+/* Posts */
+.postContainer {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #2284c5af;
+  border-radius: 0.3em;
+  margin-bottom: 25px;
+}
+
+.postContent {
+  flex: 1;
+  padding: 10px;
+  font-size: large;
+  text-align: justify;
+}
+
+header {
+  padding: 10px;
+  background-color: #2284c5af;
+  font-size: x-large;
+}
+
+footer {
+  padding: 10px;
+  background-color: #2284c5af;
+  font-size: large;
+}
+
+footer a {
+  color: white;
 }

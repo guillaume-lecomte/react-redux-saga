@@ -1,8 +1,13 @@
 import { connect } from "react-redux";
-import { fetchPostsRequest } from "../actions";
-import PostsList from "../components/postsList";
+import PostsList from "../components/PostsList";
+import { getPostsRequest } from "../actions/postActions";
 
-const mapStateToProps = (state) => {
-  return { posts: state.posts };
-};
-export default connect(mapStateToProps, { fetchPostsRequest })(PostsList);
+const mapStateToProps = (state) => ({
+  list: state.posts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getPostsRequest: () => dispatch(getPostsRequest()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostsList);

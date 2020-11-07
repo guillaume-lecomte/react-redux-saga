@@ -1,12 +1,13 @@
 import { put, call } from "redux-saga/effects";
-import { fetchPostsRequest } from "../actions";
-import API from "../services/postsApi";
+import { getPosts } from "../actions/postActions";
+import API from "../apis/posts";
 
-export function* fetchPostsSaga() {
+// Generator function, which returns a Generator object
+export function* getPostsSaga() {
   try {
     const response = yield call(API.getPosts);
-    yield put(fetchPostsRequest(response.data));
+    yield put(getPosts(response));
   } catch (error) {
-    console.log(error);
+    console.warn(error);
   }
 }
